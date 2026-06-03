@@ -8,7 +8,10 @@
  * - orders/quotations: store ordered_unit and ordered_quantity_base (converted to base) for integrity
  */
 
-require("dotenv").config({ path: ".env.local" });
+const fs = require("fs");
+const path = require("path");
+const envPath = fs.existsSync(path.resolve(process.cwd(), ".env.local")) ? ".env.local" : ".env";
+require("dotenv").config({ path: envPath });
 const { neon } = require("@neondatabase/serverless");
 
 const sql = neon(process.env.DATABASE_URL);

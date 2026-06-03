@@ -142,4 +142,103 @@
   }
   .sidebar-link:hover { color: var(--color-text); background: var(--color-surface-2); }
   .sidebar-link.active { color: var(--color-brand); background: rgba(91,176,91,0.08); }
+
+  /* Public Landing Page Classes */
+  .public-page {
+    background-color: #f9fafb;
+    color: #1f2937;
+    font-family: var(--font-body);
+  }
+
+  .pub-top-bar {
+    background-color: #1a2536;
+    color: #e2e8f0;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  .pub-btn-quote {
+    background-color: #008f53;
+    color: #ffffff;
+    transition: all 0.2s ease-in-out;
+  }
+  .pub-btn-quote:hover {
+    background-color: #00a862;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 143, 83, 0.3);
+  }
+
+  .pub-nav {
+    background-color: #ffffff;
+    border-bottom: 2px solid #e5e7eb;
+  }
+
+  .pub-nav-link {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: #4b5563;
+    transition: color 0.15s ease-in-out;
+    text-transform: uppercase;
+  }
+  .pub-nav-link:hover {
+    color: #008f53;
+  }
+
+  .pub-hero {
+    background-image: linear-gradient(rgba(13, 27, 42, 0.75), rgba(13, 27, 42, 0.75)), url('/chemistry_hero.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .pub-btn-green {
+    background-color: #008f53;
+    color: #ffffff;
+    font-weight: 600;
+    transition: all 0.2s ease-in-out;
+  }
+  .pub-btn-green:hover {
+    background-color: #00a862;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 143, 83, 0.3);
+  }
+
+  .pub-title-green {
+    color: #008f53;
+    font-weight: 600;
+  }
+
+  .pub-card {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    transition: all 0.2s ease;
+  }
+  .pub-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    border-color: #008f53;
+  }
+
+  .pub-input {
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    color: #1f2937;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    transition: all 0.15s ease;
+  }
+  .pub-input:focus {
+    border-color: #008f53;
+    box-shadow: 0 0 0 3px rgba(0, 143, 83, 0.1);
+    outline: none;
+  }
+
+  .pub-footer {
+    background-color: #111827;
+    color: #9ca3af;
+  }
 }
+

@@ -11,15 +11,15 @@ export default async function DashboardPage() {
   const [productCount] = await sql`SELECT COUNT(*) AS count FROM products WHERE is_active = true`;
   const [quotationCount] = await sql`
     SELECT COUNT(*) AS count FROM quotations
-    ${isAdmin ? sql`` : sql`WHERE seller_id = ${session!.user.id}`}
+    WHERE ${isAdmin} OR seller_id = ${session?.user?.id}
   `;
   const [orderCount] = await sql`
     SELECT COUNT(*) AS count FROM orders
-    ${isAdmin ? sql`` : sql`WHERE seller_id = ${session!.user.id}`}
+    WHERE ${isAdmin} OR seller_id = ${session?.user?.id}
   `;
   const [revenue] = await sql`
-    SELECT COALESCE(SUM(total_paise), 0) AS total FROM orders WHERE status != 'cancelled'
-    ${isAdmin ? sql`` : sql`AND seller_id = ${session!.user.id}`}
+    SELECT COALESCE(SUM(total_paise), 0) AS total FROM orders
+    WHERE status != 'cancelled' AND (${isAdmin} OR seller_id = ${session?.user?.id})
   `;
 
   const stats = [
@@ -56,7 +56,7 @@ export default async function DashboardPage() {
   const recentQuotations = await sql`
     SELECT q.id, q.status, q.total_paise, q.created_at, u.name AS seller_name
     FROM quotations q JOIN users u ON u.id = q.seller_id
-    ${isAdmin ? sql`` : sql`WHERE q.seller_id = ${session!.user.id}`}
+    WHERE ${isAdmin} OR q.seller_id = ${session?.user?.id}
     ORDER BY q.created_at DESC LIMIT 5
   `;
 
