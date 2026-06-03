@@ -136,6 +136,7 @@ export function LandingClient({ products, session }: LandingClientProps) {
                       </span>
                       <span className="text-xs text-gray-400 font-mono">SKU: {p.sku}</span>
                     </div>
+
                     <h3 className="text-base font-semibold text-gray-900 mb-1">{p.name}</h3>
                     <p className="text-xs text-gray-500 line-clamp-2 mb-4 leading-relaxed">{p.description}</p>
                   </div>
