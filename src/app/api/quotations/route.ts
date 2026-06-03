@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { authOptions } from "@/lib/auth";
 import { sql } from "@/lib/db";
 import { toBaseUnit, calculateOrderTotal } from "@/lib/schema";
 import { z } from "zod";

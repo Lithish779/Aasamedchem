@@ -1,6 +1,9 @@
 import { neon } from "@neondatabase/serverless";
 
-const sql = neon(process.env.DATABASE_URL!);
+// Fallback connection string during Next.js build pre-rendering if DATABASE_URL is not set
+const connectionString = process.env.DATABASE_URL || "postgresql://placeholder:placeholder@ep-placeholder.region.pooler.neon.tech/placeholder";
+
+const sql = neon(connectionString);
 
 export { sql };
 
